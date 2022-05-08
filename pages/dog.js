@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link"
 import Image from "next/image"
-const Dog = () => {
+export default function Dog() {
   const [dog, setDog] = useState(null);
   useEffect(() => {
     async function getDog() {
@@ -18,4 +18,3 @@ const Dog = () => {
   </>)
 };
 
-export default Dog;
