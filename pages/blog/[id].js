@@ -1,8 +1,6 @@
-
-import posts from "../../posts.json"
-import Link from "next/link"
-export default function hello ({post}) {
-  
+import posts from "../../posts.json";
+import Link from "next/link";
+export default function hello({ post }) {
   return (
     <>
       <h3>Dynamic page content</h3>
@@ -13,17 +11,17 @@ export default function hello ({post}) {
   );
 }
 
-export async function getStaticPaths(){
+export async function getStaticPaths() {
   return {
-    paths: Object.keys(id=>({params:{id}})), 
-    fallback: true // false or 'blocking'
+    paths: Object.keys(posts).map((id) => ({ params: { id } })),
+    fallback: false, // false or 'blocking'
   };
 }
 
-export async function getStaticProps({params}){
+export async function getStaticProps({ params }) {
   return {
-    props:{
-      post:posts[params.id]
-    }
-  }
+    props: {
+      post: posts[params.id],
+    },
+  };
 }
