@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link"
+import Image from "next/image"
 const Dog = () => {
   const [dog, setDog] = useState(null);
   useEffect(() => {
@@ -12,7 +13,7 @@ const Dog = () => {
   }, []);
 
   return (<>
-  <img src={dog} alt="cute pet" style={{height:'200px',display:'block'}}/>
+  <Image src={dog} alt="cute pet" style={{height:'200px',display:'block'}}/>
   <Link href="/"><a>Home</a></Link>
   </>)
 };
