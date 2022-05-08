@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link"
 import Image from "next/image"
 export default function Dog() {
-  const [dog, setDog] = useState(null);
+  const [dog, setDog] = useState("https://dog.ceo/api/breeds/image/random");
   useEffect(() => {
     async function getDog() {
       const res = await fetch("https://dog.ceo/api/breeds/image/random");
