@@ -1,7 +1,7 @@
 
 import posts from "../../posts.json"
 import Link from "next/link"
-export default function ({post}) {
+export default function hello ({post}) {
   
   return (
     <>
